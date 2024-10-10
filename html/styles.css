@@ -1,0 +1,192 @@
+/* Variable CSS */
+:root {
+  --text-dark: #020617;
+  --text-white: #ffffff;
+  --white: #ffffff;
+  --gray: #efeeee;
+  --fotsy: #ffffff;
+  --mena: #cb0909;
+  --maintso: #21a700f6;
+}
+
+.right-content img {
+  width: 80%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  background-color: var(--fotsy);
+}
+
+.left-content {
+  width: 60%;
+  background-color: var(--mena);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  letter-spacing: 2px;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--text-dark);
+  background-color: var(--fotsy);
+  padding: 4% 4% 4% 8%;
+  position: relative;
+  height: 100%;
+  width: 80%;
+  z-index: 2;
+}
+
+.text-head h5 {
+  font-size: 24px;
+}
+.text-head span {
+  color: var(--mena);
+}
+
+.text-body h3 {
+  font-size: 40px;
+  opacity: 0;
+  animation: typing 3.5s steps(40) forwards;
+}
+
+@keyframes typing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.square {
+  position: absolute;
+  left: 35%;
+  height: 100vh;
+  width: 100vh;
+  background-color: var(--fotsy);
+  z-index: 1;
+  transform: rotate(45deg);
+  overflow: hidden;
+}
+.circle {
+  position: relative;
+  bottom: 70vh;
+  left: 70vh;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--mena);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  transform: rotate(180deg);
+  animation: miodina 0.5s forwards;
+  animation-delay: 3.5s;
+}
+@keyframes miodina {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.job1,
+.job2 {
+  color: var(--mena);
+  text-align: center;
+  background-color: var(--fotsy);
+  font-size: 18px;
+  font-weight: bold;
+  transform: rotate(135deg);
+  z-index: 12;
+  padding-top: 10px;
+  margin-right: 35px; /*+ = direction sud-est*/
+  margin-top: 60px; /*= directio nord-est*/
+  animation: soratraMiodina 0.5s forwards;
+  animation-delay: 3.5s;
+}
+@keyframes soratraMiodina {
+  0% {
+    background-color: var(--fotsy);
+    transform: rotate(135deg);
+    margin-right: 20px;
+    margin-top: 60px;
+  }
+  100% {
+    background-color: var(--maintso);
+    transform: rotate(225deg);
+    margin-left: 40px; /*+ = direction nord-est*/
+    margin-bottom: 65px; /*= directio sud-est*/
+    margin-right: 45px;
+    margin-top: 60px;
+  }
+}
+
+.info-reseau-sociaux a {
+  color: var(--mena);
+  font-size: 30px;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.info-reseau-sociaux a:hover {
+  /* color: var(--mena);  */
+  filter: invert(0);
+}
+
+.right-content {
+  width: 40%;
+  background-color: var(--mena);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+/* Animation autour du bouton Télécharger CV */
+.info-cv {
+  margin-top: 20px;
+}
+
+.info-cv input {
+  position: relative;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--mena);
+  color: var(--text-white);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Animation pour changer le fond de gauche à droite */
+.info-content,
+.square {
+  animation: backgroundChange 0.5s forwards;
+  animation-delay: 3.5s;
+}
+
+@keyframes backgroundChange {
+  0% {
+    background-color: var(--fotsy);
+    color: var(--text-dark);
+  }
+  100% {
+    background-color: var(--maintso);
+    color: var(--text-white);
+  }
+}
